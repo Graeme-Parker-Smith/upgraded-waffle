@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import About from './About';
 
 class App extends Component {
   // Initialize state
@@ -44,6 +45,7 @@ class App extends Component {
               onClick={this.getPasswords}>
               Get More
             </button>
+            <About />
           </div>
         ) : (
           // Render a helpful message otherwise
