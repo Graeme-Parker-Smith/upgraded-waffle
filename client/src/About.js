@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default () => {
@@ -9,7 +10,7 @@ export default () => {
 		setState({ ...state, [name]: e.target.value });
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = function (e) {
 		axios
 			.post('/api/sendemail', { ...state }, { headers: { 'Content-type': 'application/json; charset=UTF-8' } })
 			.then((response) => {
@@ -60,6 +61,7 @@ export default () => {
 				<div className="submit">{/* <button>submit</button>
 					<button>reset</button> */}</div>
 				<button onClick={handleClick}>test</button>
+				<Link to="/">Go To Home</Link>
 			</div>
 		</div>
 	);
